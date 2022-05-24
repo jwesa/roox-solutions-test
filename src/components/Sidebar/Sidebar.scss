@@ -1,0 +1,13 @@
+.sidebar {
+    width: 152px;
+    height: 100%;
+    position: fixed;
+    padding: 35px 20px;
+    background-color: #bdbdbd;
+	font-size: 1.2rem;
+	line-height: 1.4rem;
+
+	&__button{
+		margin: 10px 0;
+	}
+}
