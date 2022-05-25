@@ -1,14 +1,14 @@
-import React from "react";
+import "./UserListPage.scss";
+import UserList from "../../containers/UserList/UserList";
 import Header from "../Header/Header";
-import UserCard from "../UserCard/UserCard";
 
-const UserList = () => {
+const UserListPage = () => {
     return (
         <div className="user-list">
             <Header title="Список пользователей" />
-            <UserCard />
+            <UserList />
         </div>
     );
 };
 
-export default UserList;
+export default UserListPage;

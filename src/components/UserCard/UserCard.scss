@@ -4,11 +4,12 @@
     width: 420px;
     height: 73px;
     background: #f3f3f3;
-    margin: 0 0 14px 31px;
+    margin-bottom: 14px;
+	margin-right: auto;
     font-size: 1.1rem;
     line-height: 1.3rem;
     border-radius: 8px;
-	
+
     &__list {
         padding: 3px;
     }
@@ -25,5 +26,9 @@
         text-decoration: none;
         padding: 10px;
         align-self: flex-end;
+        color: #4b51ef;
+        &:visited {
+            color: #4b51ef;
+        }
     }
 }

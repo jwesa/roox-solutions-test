@@ -1,21 +1,21 @@
 import { Link } from "react-router-dom";
 import "./UserCard.scss";
 
-const UserCard = () => {
+const UserCard = ({ name, city, company, id }) => {
     return (
         <div className="user-card">
             <div className="user-card__list">
                 <div className="user-card__item">
-                    <span className="user-card__name">ФИО:</span> Ivan Ivanov
+                    <span className="user-card__name">ФИО:</span> {name}
                 </div>
                 <div className="user-card__item">
-                    <span className="user-card__name">город:</span> Moscow
+                    <span className="user-card__name">город:</span> {city}
                 </div>
                 <div className="user-card__item">
-                    <span className="user-card__name">компания:</span> Google
+                    <span className="user-card__name">компания:</span> {company}
                 </div>
             </div>
-            <Link to="/" className="user-card__link">
+            <Link to={`${id}`} className="user-card__link">
                 Подробнее
             </Link>
         </div>
