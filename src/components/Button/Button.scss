@@ -1,18 +1,29 @@
 .button {
     border: none;
     border-radius: 5px;
-	background-color: #4b51ef;
-	color: #fff;
+    background-color: #4b51ef;
+    color: #fff;
 
-	&:hover{
-		opacity: 80%;
-	}
+    &:hover {
+        opacity: 80%;
+    }
 
     &_sidebar {
         padding: 5px 15px;
     }
 
-	&_header {
-		padding: 6px 11px;
-	}
+    &_header {
+        padding: 6px 11px;
+    }
+
+    &_send {
+        padding: 5px 6px 5px 15px;
+        background: #52cf4f;
+        &:disabled {
+            background: #afafaf;
+            &:hover {
+                opacity: 100%;
+            }
+        }
+    }
 }

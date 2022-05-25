@@ -1,0 +1,29 @@
+.user-card {
+    display: flex;
+    justify-content: space-between;
+    width: 420px;
+    height: 73px;
+    background: #f3f3f3;
+    margin: 0 0 14px 31px;
+    font-size: 1.1rem;
+    line-height: 1.3rem;
+    border-radius: 8px;
+	
+    &__list {
+        padding: 3px;
+    }
+
+    &__item {
+        margin: 7px;
+    }
+
+    &__name {
+        color: #a3a3a3;
+    }
+
+    &__link {
+        text-decoration: none;
+        padding: 10px;
+        align-self: flex-end;
+    }
+}

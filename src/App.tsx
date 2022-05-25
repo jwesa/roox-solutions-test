@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import AppWrapper from "./components/AppWrapper/AppWrapper";
+import AppWrapper from "./containers/AppWrapper/AppWrapper";
 import UserList from "./components/UserList/UserList";
 import UserProfile from "./components/UserProfile/UserProfile";
 
