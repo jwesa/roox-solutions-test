@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { fetchUsers } from "./store/reducers/fetchUsersReducer";
 import AppWrapper from "./containers/AppWrapper/AppWrapper";
 import UserProfile from "./components/UserProfile/UserProfile";
-import UserListPage from "./components/UserListPage/UserListPage";
+import UserListPage from "./containers/UserListPage/UserListPage";
 
 const App = () => {
     const dispatch = useDispatch();
