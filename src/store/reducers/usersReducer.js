@@ -18,7 +18,11 @@ const usersSlice = createSlice({
         users: [],
         loading: false,
     },
-    reducers: {},
+    reducers: {
+        updateUsers(state, action) {
+            state.users = action.payload;
+        },
+    },
     extraReducers: {
         [fetchUsers.pending]: (state) => {
             state.loading = true;
@@ -29,5 +33,7 @@ const usersSlice = createSlice({
         },
     },
 });
+
+export const { updateUsers } = usersSlice.actions;
 
 export default usersSlice.reducer;

@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import fetchUsersReducer from "./reducers/fetchUsersReducer";
+import fetchUsersReducer from "./reducers/usersReducer";
 
 export default configureStore({
 	reducer: {

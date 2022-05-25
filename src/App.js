@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { fetchUsers } from "./store/reducers/fetchUsersReducer";
+import { fetchUsers } from "./store/reducers/usersReducer";
 import AppWrapper from "./containers/AppWrapper/AppWrapper";
 import UserProfile from "./components/UserProfile/UserProfile";
 import UserListPage from "./containers/UserListPage/UserListPage";
