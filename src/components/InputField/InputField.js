@@ -1,6 +1,6 @@
 import "./InputField.scss";
 
-const InputField = ({ type, name, placeholder }) => {
+const InputField = ({ type, name, value, placeholder, onChange }) => {
     return (
         <div className="field">
             <label className="field__label">{name}</label>
@@ -9,9 +9,14 @@ const InputField = ({ type, name, placeholder }) => {
                     className="field__input"
                     type="text"
                     placeholder={placeholder}
+                    value={value}
+                    onChange={onChange}
                 />
             ) : (
-                <textarea className="field__textarea"></textarea>
+                <textarea
+                    className="field__textarea"
+                    onChange={onChange}
+                ></textarea>
             )}
         </div>
     );
