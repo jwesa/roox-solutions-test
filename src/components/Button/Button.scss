@@ -13,12 +13,16 @@
     }
 
     &_header {
+		margin-right: 8px;
         padding: 6px 11px;
     }
 
     &_send {
-        padding: 5px 6px 5px 15px;
+        padding: 5px 10px;
         background: #52cf4f;
+		display: flex;
+		margin-left: auto;
+		
         &:disabled {
             background: #afafaf;
             &:hover {

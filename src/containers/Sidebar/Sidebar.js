@@ -1,16 +1,15 @@
 import "./Sidebar.scss";
 import Button from "../../components/Button/Button";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { changeSortDirection } from "../../store/reducers/sortReducer";
 import { updateUsers } from "../../store/reducers/usersReducer";
 
 const Sidebar = () => {
     const dispatch = useDispatch();
     const { users } = useSelector((state) => state.users);
-    const { direction } = useSelector((state) => state.direction);
+    const { direction } = useSelector((state) => state.sort);
 
-    const sortBy = (keyName, directionName) => {
+    const sortBy = (keyName) => {
         const key = keyName.split(".");
         const newUsers = [...users];
 
@@ -20,8 +19,7 @@ const Sidebar = () => {
             }
             return b[key[0]][key[1]].localeCompare(a[key[0]][key[1]]);
         });
-
-        dispatch(changeSortDirection(directionName));
+        dispatch(changeSortDirection());
         dispatch(updateUsers(newUsers));
     };
 
@@ -33,7 +31,7 @@ const Sidebar = () => {
                     title="по городу"
                     className="button_sidebar"
                     onClick={() => {
-                        sortBy("address.city", "city");
+                        sortBy("address.city");
                     }}
                 />
             </div>
@@ -42,7 +40,7 @@ const Sidebar = () => {
                     title="по компании"
                     className="button_sidebar"
                     onClick={() => {
-                        sortBy("company.name", "company");
+                        sortBy("company.name");
                     }}
                 />
             </div>

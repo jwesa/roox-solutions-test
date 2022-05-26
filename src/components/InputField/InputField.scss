@@ -1,0 +1,49 @@
+.field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &__label {
+        font-size: 0.8rem;
+        line-height: 0.9rem;
+        margin-bottom: 2px;
+    }
+
+    &__input {
+        padding: 4px 10px;
+        width: 211px;
+        border: 1px solid #d8d8d8;
+        border-radius: 5px;
+        font-size: 1rem;
+        line-height: 1.2rem;
+        outline: none;
+
+        &::placeholder {
+            color: rgba(0, 0, 0, 0.3);
+        }
+
+        &:disabled {
+            color: rgba(0, 0, 0, 0.3);
+            pointer-events: none;
+        }
+    }
+
+    &__textarea {
+        width: 420px;
+        height: 55px;
+        padding-left: 4px;
+        border: 1px solid #d8d8d8;
+        border-radius: 5px;
+        resize: none;
+        font-size: 1rem;
+        line-height: 1.2rem;
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 400;
+        outline: none;
+    }
+}

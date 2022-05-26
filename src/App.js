@@ -3,8 +3,8 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { fetchUsers } from "./store/reducers/usersReducer";
 import AppWrapper from "./containers/AppWrapper/AppWrapper";
-import UserProfile from "./components/UserProfile/UserProfile";
 import UserListPage from "./containers/UserListPage/UserListPage";
+import UserProfilePage from "./containers/UserProfilePage/UserProfilePage";
 
 const App = () => {
     const dispatch = useDispatch();
@@ -17,7 +17,7 @@ const App = () => {
         <Routes>
             <Route path="/" element={<AppWrapper />}>
                 <Route index element={<UserListPage />} />
-                <Route path={":userId"} element={<UserProfile />} />
+                <Route path={":userId"} element={<UserProfilePage />} />
             </Route>
         </Routes>
     );

@@ -5,6 +5,6 @@ import sortReducer from "./reducers/sortReducer";
 export default configureStore({
     reducer: {
         users: fetchUsersReducer,
-        direction: sortReducer,
+        sort: sortReducer,
     },
 });
