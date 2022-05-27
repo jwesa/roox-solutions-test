@@ -22,10 +22,10 @@
         line-height: 1.2rem;
         outline: none;
 
-		&_error {
-			border: 1px solid #d91313;
-		}
-		
+        &_error {
+            border: 1px solid #d91313;
+        }
+
         &::placeholder {
             color: rgba(0, 0, 0, 0.3);
         }
@@ -49,5 +49,10 @@
         font-style: normal;
         font-weight: 400;
         outline: none;
+
+        &:disabled {
+            color: rgba(0, 0, 0, 0.3);
+            pointer-events: none;
+        }
     }
 }
