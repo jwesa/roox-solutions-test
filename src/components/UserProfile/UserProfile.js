@@ -7,10 +7,10 @@ import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const UserProfile = () => {
-    const { userId } = useParams();
-
     const { readonly } = useSelector((state) => state.readonly);
     const { users } = useSelector((state) => state.users);
+
+    const { userId } = useParams();
 
     const user = users.find((user) => user.id === +userId);
 
@@ -26,6 +26,22 @@ const UserProfile = () => {
         comment: "",
     });
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (
+            value.name &&
+            value.username &&
+            value.email &&
+            value.street &&
+            value.city &&
+            value.zipcode &&
+            value.phone &&
+            value.website
+        ) {
+            console.log(JSON.stringify(value));
+        }
+    };
+
     return (
         <div className="user-profile">
             <div className="user-profile__container">
@@ -34,10 +50,11 @@ const UserProfile = () => {
                         <InputField
                             key={i}
                             name={item.name}
-                            value={value[item.key]}
-                            placeholder={item.placeholder}
                             type={item.type}
+                            placeholder={item.placeholder}
+                            value={value[item.key]}
                             disabled={readonly}
+                            className={""}
                             onChange={(e) => {
                                 setValue((prev) => ({
                                     ...prev,
@@ -52,6 +69,7 @@ const UserProfile = () => {
                 title="Отправить"
                 className="button_send"
                 disabled={readonly}
+                onClick={handleSubmit}
             />
         </div>
     );

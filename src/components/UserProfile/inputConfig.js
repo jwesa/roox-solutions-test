@@ -41,6 +41,7 @@ export const inputConfig = [
     },
     {
         name: "Comment",
+        key: "comment",
         type: "textarea",
     },
 ];
