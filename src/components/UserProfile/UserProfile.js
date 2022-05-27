@@ -3,17 +3,11 @@ import InputField from "../InputField/InputField";
 import Button from "../Button/Button";
 import { inputConfig } from "./inputConfig";
 import { useState } from "react";
-import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-const UserProfile = () => {
+const UserProfile = ({user}) => {
     const { readonly } = useSelector((state) => state.readonly);
-    const { users } = useSelector((state) => state.users);
-
-    const { id } = useParams();
-
-    const user = users.find((user) => user.id === +id);
-
+    
     const [value, setValue] = useState({
         name: user.name,
         username: user.username,
