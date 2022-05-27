@@ -1,10 +1,10 @@
-import { Routes, Route } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { useEffect } from "react";
-import { fetchUsers } from "./store/reducers/usersReducer";
 import AppWrapper from "./containers/AppWrapper/AppWrapper";
 import UserListPage from "./containers/UserListPage/UserListPage";
 import UserProfilePage from "./containers/UserProfilePage/UserProfilePage";
+import { Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { fetchUsers } from "./store/reducers/usersReducer";
 
 const App = () => {
     const dispatch = useDispatch();
@@ -17,7 +17,7 @@ const App = () => {
         <Routes>
             <Route path="/" element={<AppWrapper />}>
                 <Route index element={<UserListPage />} />
-                <Route path={":userId"} element={<UserProfilePage />} />
+                <Route path={":id"} element={<UserProfilePage />} />
             </Route>
         </Routes>
     );

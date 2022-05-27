@@ -5,22 +5,24 @@ import { changeSortDirection } from "../../store/reducers/sortReducer";
 import { updateUsers } from "../../store/reducers/usersReducer";
 
 const Sidebar = () => {
-    const dispatch = useDispatch();
+	const dispatch = useDispatch();
+	
     const { users } = useSelector((state) => state.users);
     const { direction } = useSelector((state) => state.sort);
 
     const sortBy = (keyName) => {
         const key = keyName.split(".");
-        const newUsers = [...users];
+        const updatedUsers = [...users];
 
-        newUsers.sort((a, b) => {
+        updatedUsers.sort((a, b) => {
             if (direction) {
                 return a[key[0]][key[1]].localeCompare(b[key[0]][key[1]]);
             }
             return b[key[0]][key[1]].localeCompare(a[key[0]][key[1]]);
-        });
+		});
+		
         dispatch(changeSortDirection());
-        dispatch(updateUsers(newUsers));
+        dispatch(updateUsers(updatedUsers));
     };
 
     return (

@@ -4,30 +4,30 @@
     background-color: #4b51ef;
     color: #fff;
 
-    &:hover {
-        opacity: 80%;
-    }
-
     &_sidebar {
         padding: 5px 15px;
     }
 
     &_header {
-		margin-right: 8px;
+        margin-right: 8px;
         padding: 6px 11px;
     }
 
     &_send {
         padding: 5px 10px;
         background: #52cf4f;
-		display: flex;
-		margin-left: auto;
-		
+        display: flex;
+        margin-left: auto;
+
         &:disabled {
             background: #afafaf;
             &:hover {
                 opacity: 100%;
             }
         }
+    }
+	
+    &:hover {
+        opacity: 80%;
     }
 }

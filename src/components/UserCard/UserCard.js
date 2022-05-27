@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import "./UserCard.scss";
+import { Link } from "react-router-dom";
 
 const UserCard = ({ name, city, company, id }) => {
     return (

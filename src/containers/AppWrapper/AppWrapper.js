@@ -1,7 +1,7 @@
 import './AppWrapper.scss'
-import { Outlet } from "react-router-dom";
 import MainContent from "../MainContent/MainContent";
 import Sidebar from "../Sidebar/Sidebar";
+import { Outlet } from "react-router-dom";
 
 const AppWrapper = () => {
     return (

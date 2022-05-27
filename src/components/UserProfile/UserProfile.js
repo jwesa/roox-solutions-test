@@ -10,9 +10,9 @@ const UserProfile = () => {
     const { readonly } = useSelector((state) => state.readonly);
     const { users } = useSelector((state) => state.users);
 
-    const { userId } = useParams();
+    const { id } = useParams();
 
-    const user = users.find((user) => user.id === +userId);
+    const user = users.find((user) => user.id === +id);
 
     const [value, setValue] = useState({
         name: user.name,
@@ -54,7 +54,6 @@ const UserProfile = () => {
                             placeholder={item.placeholder}
                             value={value[item.key]}
                             disabled={readonly}
-                            className={""}
                             onChange={(e) => {
                                 setValue((prev) => ({
                                     ...prev,

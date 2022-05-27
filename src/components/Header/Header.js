@@ -5,14 +5,14 @@ import { useDispatch } from "react-redux";
 import { toggleReadonly } from "../../store/reducers/readonlyReducer";
 
 const Header = ({ title }) => {
-    const { userId } = useParams();
+    const { id } = useParams();
 
     const dispatch = useDispatch();
 
     return (
         <div className="header">
             <div className="header__title">{title}</div>
-            {userId !== undefined && (
+            {id !== undefined && (
                 <Button
                     title="Редактировать"
                     className="button_header"

@@ -1,9 +1,10 @@
 import "./UserList.scss";
-import { useSelector } from "react-redux";
 import UserCard from "../UserCard/UserCard";
+import { useSelector } from "react-redux";
 
 const UserList = () => {
-    const { users } = useSelector((state) => state.users);
+	const { users } = useSelector((state) => state.users);
+	
     return (
         <>
             {users.map((user) => {

@@ -1,15 +1,7 @@
 import { useState } from "react";
 import "./InputField.scss";
 
-const InputField = ({
-    type,
-    name,
-    value,
-    // className,
-    placeholder,
-    onChange,
-    disabled,
-}) => {
+const InputField = ({ type, name, value, placeholder, onChange, disabled }) => {
     const [error, setError] = useState(null);
 
     const blurHandler = (e) => {
