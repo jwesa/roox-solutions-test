@@ -1,10 +1,10 @@
 import "./UserList.scss";
 import UserCard from "../../components/UserCard/UserCard";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "../../hook";
 
-const UserList = () => {
-	const { users } = useSelector((state) => state.users);
-	
+const UserList: React.FC = () => {
+    const { users } = useAppSelector((state) => state.users);
+
     return (
         <>
             {users.map((user) => {

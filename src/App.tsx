@@ -15,10 +15,10 @@ const App: React.FC = () => {
 
     return (
         <Routes>
-            <Route path="/users" element={<AppWrapper />}>
+            <Route path="/" element={<AppWrapper />}>
                 <Route index element={<UserListPage />} />
-                <Route path="/users" element={<UserListPage />} />
-                <Route path={"/users/:id"} element={<UserProfilePage />} />
+                <Route path="/" element={<UserListPage />} />
+                <Route path={"/:id"} element={<UserProfilePage />} />
             </Route>
         </Routes>
     );
