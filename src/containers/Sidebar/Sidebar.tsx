@@ -1,16 +1,16 @@
 import "./Sidebar.scss";
 import Button from "../../components/Button/Button";
-import { useDispatch, useSelector } from "react-redux";
-import { changeSortDirection } from "../../store/reducers/sortReducer";
-import { updateUsers } from "../../store/reducers/usersReducer";
+import { useAppDispatch, useAppSelector } from "../../hook";
+import { changeSortDirection } from "../../app/reducers/sortReducer";
+import { updateUsers } from "../../app/reducers/usersReducer";
 
 const Sidebar = () => {
-	const dispatch = useDispatch();
-	
-    const { users } = useSelector((state) => state.users);
-    const { direction } = useSelector((state) => state.sort);
+    const dispatch = useAppDispatch();
 
-    const sortBy = (keyName) => {
+    const { users } = useAppSelector((state) => state.users);
+    const { direction } = useAppSelector((state) => state.sort);
+
+    const sortBy = (keyName: string) => {
         const key = keyName.split(".");
         const updatedUsers = [...users];
 
@@ -19,8 +19,8 @@ const Sidebar = () => {
                 return a[key[0]][key[1]].localeCompare(b[key[0]][key[1]]);
             }
             return b[key[0]][key[1]].localeCompare(a[key[0]][key[1]]);
-		});
-		
+        });
+
         dispatch(changeSortDirection());
         dispatch(updateUsers(updatedUsers));
     };

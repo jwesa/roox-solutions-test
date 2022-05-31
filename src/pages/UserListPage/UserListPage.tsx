@@ -1,12 +1,12 @@
 import "./UserListPage.scss";
-import UserList from "../../components/UserList/UserList";
+import UserList from "../../containers/UserList/UserList";
 import Header from "../../components/Header/Header";
 import { TailSpin } from "react-loader-spinner";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "../../hook";
 
-const UserListPage = () => {
-	const { loading } = useSelector((state) => state.users);
-	
+const UserListPage: React.FC = () => {
+    const { loading } = useAppSelector((state) => state.users);
+
     return (
         <>
             <Header title="Список пользователей" />

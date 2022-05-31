@@ -1,11 +1,29 @@
-import { useState } from "react";
 import "./InputField.scss";
+import { useState } from "react";
 
-const InputField = ({ type, name, value, placeholder, onChange, disabled }) => {
-    const [error, setError] = useState(null);
+interface InputFieldProps {
+    type: string;
+    name: string;
+    value: string | [key: string];
+    placeholder: string;
+    disabled: boolean;
+    onChange: (
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    ) => void;
+}
 
-    const blurHandler = (e) => {
-        e.target.value === "" ? setError("field__input_error") : setError(null);
+const InputField: React.FC<InputFieldProps> = ({
+    type,
+    name,
+    value,
+    placeholder,
+    disabled,
+    onChange,
+}) => {
+    const [error, setError] = useState<string>("");
+
+    const blurHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+        e.target.value === "" ? setError("field__input_error") : setError("");
     };
 
     return (
@@ -15,6 +33,7 @@ const InputField = ({ type, name, value, placeholder, onChange, disabled }) => {
                 <input
                     className={`field__input ${error}`}
                     type="text"
+                    spellCheck="false"
                     placeholder={placeholder}
                     value={value}
                     onBlur={blurHandler}
@@ -24,6 +43,7 @@ const InputField = ({ type, name, value, placeholder, onChange, disabled }) => {
             ) : (
                 <textarea
                     className="field__textarea"
+                    spellCheck="false"
                     value={value}
                     onChange={onChange}
                     disabled={disabled}
