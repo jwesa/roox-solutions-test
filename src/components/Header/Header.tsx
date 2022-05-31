@@ -1,13 +1,17 @@
 import "./Header.scss";
 import Button from "../Button/Button";
 import { useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { toggleReadonly } from "../../store/reducers/readonlyReducer";
+import { useAppDispatch } from "../../hook";
+import { toggleReadonly } from "../../app/reducers/readonlyReducer";
 
-const Header = ({ title }) => {
+interface HeaderProps {
+    title: string;
+}
+
+const Header: React.FC<HeaderProps> = ({ title }) => {
     const { id } = useParams();
 
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     return (
         <div className="header">

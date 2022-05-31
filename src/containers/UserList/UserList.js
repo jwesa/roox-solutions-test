@@ -1,5 +1,5 @@
 import "./UserList.scss";
-import UserCard from "../UserCard/UserCard";
+import UserCard from "../../components/UserCard/UserCard";
 import { useSelector } from "react-redux";
 
 const UserList = () => {

@@ -1,7 +1,14 @@
 import "./UserCard.scss";
 import { Link } from "react-router-dom";
 
-const UserCard = ({ name, city, company, id }) => {
+interface UserCardProps {
+    id: string;
+    name: string;
+    city: string;
+    company: string;
+}
+
+const UserCard: React.FC<UserCardProps> = ({ id, name, city, company }) => {
     return (
         <div className="user-card">
             <div className="user-card__list">
@@ -15,7 +22,7 @@ const UserCard = ({ name, city, company, id }) => {
                     <span className="user-card__name">компания:</span> {company}
                 </div>
             </div>
-            <Link to={`${id}`} className="user-card__link">
+            <Link to={`/users/${id}`} className="user-card__link">
                 Подробнее
             </Link>
         </div>

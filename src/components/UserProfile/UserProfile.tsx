@@ -3,12 +3,17 @@ import InputField from "../InputField/InputField";
 import Button from "../Button/Button";
 import { inputConfig } from "./inputConfig";
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "../../hook";
+import { IUser, IValue } from "../../types/types";
 
-const UserProfile = ({user}) => {
-    const { readonly } = useSelector((state) => state.readonly);
-    
-    const [value, setValue] = useState({
+interface UserProfileProps {
+    user: IUser;
+}
+
+const UserProfile: React.FC<UserProfileProps> = ({ user }) => {
+    const { readonly } = useAppSelector((state) => state.readonly);
+
+    const [value, setValue] = useState<IValue>({
         name: user.name,
         username: user.username,
         email: user.email,
@@ -20,7 +25,7 @@ const UserProfile = ({user}) => {
         comment: "",
     });
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         if (
             value.name &&
